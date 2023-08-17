@@ -306,3 +306,116 @@ html, body {
     color: #fff;
     text-decoration: none;
 }
+
+/* making website mobile responsive */
+/* Example media query for small screens (up to 768px) */
+@media (max-width: 768px) {
+
+    /* Adjustments for the hero section */
+    #heading h1 {
+        font-size: 14vw; /* Adjust font size for smaller screens */
+    }
+
+    #heading #sec {
+        margin-left: 50px;
+    }
+    
+
+    .block h5 {
+        text-align: right;
+        font-size: 3vw;
+    }
+
+    #smallhead h5 {
+        margin-top: .5vw;
+        font-size: 3vw;
+        text-align: right;
+        text-transform: uppercase;
+        line-height: 1.7;
+    }
+
+    #dot {
+        display: none;
+    }
+
+    #herofooter{
+        top: 80%;
+        padding: 0 2vw;
+    }
+
+    /* Styles for an icon within the footer */
+    #herofooter #icon {
+        display: none;
+    }
+
+    #herofooter a:first-child {
+        display: block;
+        width: 10rem;
+    }
+
+    #herofooter a:last-child {
+        display: block;
+        width: 10rem;
+    }
+
+    /* Adjustments for the second section */
+    #second {
+        height: 80%;
+        padding-top: 40px;
+        padding-right: 5vw;
+        padding-left: 5vw;
+        padding-bottom: 60px;
+    }
+
+    .elem h1 {
+        font-size: 12vw;
+    }
+
+    .elem h5{
+        font-size: 3vw;
+        font-weight: 0;
+    }
+
+    /* Adjustments for the about section */
+    #about {
+        flex-direction: column;
+        align-items: center;
+        padding: 20vw 10vw;
+        top: 0;
+    }
+
+    #txtabout {
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    #subs{
+        line-height: 1.5;
+    }
+
+    #subs #head{
+        font-size: 3.5vw;
+    }
+
+    #subs #link{
+        font-size: 3.5vw;
+    }
+
+    #footer {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        text-align: left;
+        line-height: 1.55;
+
+    }
+    
+    #right {
+        margin-top: 10px; 
+        gap: 25px;/* Add some spacing between social media links and other content */
+    }
+
+    #left {
+        gap: 20px;
+    }
+}
