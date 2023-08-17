@@ -73,10 +73,27 @@ function circleskew() {
     });
 }
 
+// Function to update and display real-time with AM/PM and time zone
+function updateRealTime() {
+    const date = new Date();
+    const hours = date.getHours() % 12 || 12;
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    const meridiem = date.getHours() >= 12 ? 'PM' : 'AM';
+    const timeZone = new Date().toLocaleTimeString('en-us', { timeZoneName: 'short' }).split(' ')[2];
+    const timeString = `${hours}:${minutes} ${meridiem} ${timeZone}`;
+    const timeElement = document.getElementById('realtime');
+    if (timeElement) {
+        timeElement.textContent = timeString;
+    }
+}
+
 // Call the functions to initialize the effects
 circleMousefollow();
 HeroAnim();
 circleskew();
+updateRealTime();
+
+setInterval(updateRealTime, 60000);
 
 // Add event listeners to elements with class 'elem'
 document.querySelectorAll('.elem').forEach(function (elem) {
