@@ -51,11 +51,9 @@ html, body {
     color: white;
 }
 
-/* Styles for navigation links */
-#nav a {
+#nav #name{
     text-decoration: none;
-    color: white;
-    font-size: 18px;
+    color: #fff;
 }
 
 /* Styles for navigation headings */
@@ -63,6 +61,42 @@ html, body {
     font-size: 16px;
     margin-right: 10px;
 }
+
+/* added changes */
+.sidenav{
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-image: conic-gradient(white,lightgrey, grey, black);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a{
+    padding: 8px 8px 8px 32px;
+    display: block;
+    transition: 0.3s;
+    text-decoration: none;
+    font-size: 1.5vw;
+    color: #fff;
+}
+
+.sidenav a:hover{
+    color: silver;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: black;
+    font-size: 2vw;
+    }
 
 /* Styles for the heading section */
 #heading {
@@ -312,6 +346,22 @@ html, body {
 /* Example media query for small screens (up to 768px) */
 @media (max-width: 768px) {
 
+
+     .sidenav.open {
+        position: fixed;
+        z-index: 10000;
+        width: 100%; /* Open sidebar with 100% width on small screens */
+    }
+
+    .sidenav a {
+        font-size: 6vw; /* Adjust font size for small screens */
+    }
+
+    #sidebar .closebtn{
+        font-size: 10vw;
+    }
+
+    
     /* Adjustments for the hero section */
     #heading h1 {
         font-size: 14vw; /* Adjust font size for smaller screens */
@@ -419,4 +469,10 @@ html, body {
     #left {
         gap: 20px;
     }
+}
+/* added changes */
+.hidden{
+    /* display: none; */
+    visibility: hidden;
+    transition: all .1s ;
 }
