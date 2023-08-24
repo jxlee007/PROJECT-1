@@ -26,7 +26,25 @@
         <div id="hero">
             <div id="nav">
                 <a href="#">Jagmohan singh malhi</a>
-                <h3>MENU-</h3>
+                 <!-- added change -->
+                <div id="sidebar" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> &times; </a>
+                <!--This is HTML code for creating a close button with an "X" symbol inside it. 
+                    The `href="javascript:void(0)"` part indicates that clicking the link won't navigate to a new page.
+                    The `class="closebtn"` attribute assigns a CSS class to the link, and 
+                    the `onclick="closeNav()"` attribute specifies that when the link is clicked, 
+                    the JavaScript function `closeNav()` will be called. 
+                    This is commonly used to close navigation menus or modal dialogs on a web page.
+                    A modal dialog is a temporary window or pop-up that appears on top of the main content of a webpage or application.-->
+            
+                    <a href="#" target="_blank" rel="noopener noreferrer">About</a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">Services</a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">Clients</a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">Contacts</a>
+                </div>   
+            
+                <span   style="font-size: 30px;cursor: pointer;" 
+                        onclick="openNav()"><h3> MENU &#9774;</h3></span>
             </div>
 
             <div id="heading">
@@ -134,5 +152,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Adding script.js file -->
     <script src="script.js"></script>
+	<!-- working code -->
+	 <script>
+        // working code
+        function openNav() {
+            var sidebar = document.getElementById("sidebar");
+            let heading = document.querySelector("#heading");
+                if (window.innerWidth >= 769) {
+                    sidebar.style.width = "27%"; // Open sidebar with 27% width on desktop
+                } else {
+                    sidebar.style.width = "100%"; // Open sidebar with 100% width on mobile
+                    heading.classList.add("hidden")
+                }
+        }
+
+        function closeNav() {
+        var sidebar = document.getElementById("sidebar");
+        sidebar.style.width = "0"; // Close sidebar by setting width to 0
+        heading.classList.remove("hidden")
+        }
+
+    </script>
+
 </body>
 </html>
