@@ -33,6 +33,10 @@ html, body {
     font-family: 'General Sans', sans-serif;
 }
 
+.no-select{
+    -webkit-tap-highlight-color: transparent; 
+}
+
 /* Styles for the hero section */
 #hero {
     position: relative;
