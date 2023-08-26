@@ -317,7 +317,7 @@ html, body {
     width: 100%;
     padding: 20px 30px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     color: #fff;
 }
