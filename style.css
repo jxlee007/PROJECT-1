@@ -74,14 +74,17 @@ html, body {
     position: fixed;
     top: 0;
     right: 0;
-    background-image: conic-gradient(white,lightgrey, grey, black);
+    background-image: conic-gradient( darkgrey, grey, black);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
 }
 
 .sidenav a{
-    padding: 8px 8px 8px 32px;
+    margin: auto;
+    margin-left: 10%;
+    padding: 8px;
+    width: fit-content;
     display: block;
     transition: 0.3s;
     text-decoration: none;
@@ -93,14 +96,17 @@ html, body {
     color: silver;
 }
 
+.sidenav .closebtn:hover{
+    color: black;
+}
+
 .sidenav .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
-    font-size: 36px;
     margin-left: 50px;
-    color: black;
-    font-size: 2vw;
+    color: white;
+    font-size: 2.5vw;
     }
 
 /* Styles for the heading section */
