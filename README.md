@@ -1,7 +1,4 @@
-# PROJECT-1
-A Portfolio website (clone of landing page of award winning website)
-
-# Landing-Page Clone
+# PROJECT-1: Landing-Page Clone
 (Protfolio Website from Awwwards)
 
 ## Overview
