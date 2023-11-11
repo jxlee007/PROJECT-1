@@ -1,8 +1,8 @@
 # PROJECT-1: Landing-Page Clone
-(Protfolio Website from Awwwards)
+Portfolio Website from Awwwards
 
 ## Overview
-This is the code for a personal portfolio website, showcasing the skills and projects of the developer, Jagmohan Singh Malhi. The website is designed with a modern and dynamic look, incorporating smooth scrolling, creative animations, and a responsive layout.
+This is the code for a personal portfolio website, showcasing the skills and projects of the developer. The website is designed with a modern and dynamic look, incorporating smooth scrolling, creative animations, and a responsive layout.
 
 ## Key Features
 - **Navigation:** A clean and stylish navigation bar with a responsive sidebar for easy access to different sections.
