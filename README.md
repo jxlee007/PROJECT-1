@@ -23,6 +23,16 @@ This is the code for a personal portfolio website, showcasing the skills and pro
 ## Responsive Design
 The website is designed to be responsive, ensuring a seamless and enjoyable user experience across various devices. Media queries are employed to adjust styles for small screens.
 
+## Screenshots
+
+![Screenshot 1](Screenshots/1.png)
+![Screenshot 2](Screenshots/11.png)
+![Screenshot 3](Screenshots/2.png)
+![Screenshot 4](Screenshots/3.png)
+![Screenshot 5](Screenshots/4.png)
+![Screenshot 6](Screenshots/5.png)
+
+
 ## How to Use
 1. Clone the repository.
 2. Open the `index.html` file in a web browser to explore the website.
