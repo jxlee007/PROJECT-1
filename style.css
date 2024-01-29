@@ -429,6 +429,8 @@ html, body {
         padding-bottom: 60px;
     }
 
+
+
     .elem h1 {
         font-size: 12vw;
     }
@@ -436,6 +438,10 @@ html, body {
     .elem h5{
         font-size: 3vw;
         font-weight: 0;
+    }
+
+    .elem img{
+        display: none;
     }
 
     /* Adjustments for the about section */
