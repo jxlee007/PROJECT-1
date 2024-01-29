@@ -229,6 +229,7 @@ html, body {
     position: absolute;
     z-index: 999;
     height: 140%;
+    transform: translate(-50%, -50%);
 }
 
 /* Styles for a heading within an element */
