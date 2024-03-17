@@ -261,9 +261,20 @@ html, body {
 }
 
 /* Styles for an image within the about section */
+#about>span {
+    border-radius: 100%;
+    background-color: #fff;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    height: 250px;
+    width: 300px;
+ 
+}
 #about img {
-    width: 235px;
-    padding-top: 0px;
+    width: 160px;
+    object-fit: cover;
+    object-position: top;
 }
 
 /* Styles for text within the about section */
