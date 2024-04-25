@@ -45,4 +45,4 @@ The website is designed to be responsive, ensuring a seamless and enjoyable user
 - **Font Share:** [https://www.fontshare.com/](https://www.fontshare.com/)
 
 ## Author
-Jagmohan Singh Malhi
+[Jagmohan Singh Malhi](https://www.linkedin.com/in/jagmohan-singh-malhi-a67805243/)
