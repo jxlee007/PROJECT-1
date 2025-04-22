@@ -4,150 +4,102 @@ const scroll = new LocomotiveScroll({
     smooth: true
 });
 
-// Function to update the position and scale of the dot based on mouse movement
-function circleMousefollow(xscale, yscale) {
-    window.addEventListener('mousemove', function (details) {
-        document.querySelector('#dot').style.transform = `translate(${details.clientX}px, ${details.clientY}px) scale(${xscale}, ${yscale})`;
+// Create a function to handle the text revealing animation
+function initTextReveal() {
+    // Make sure the elements are initially hidden and positioned correctly
+    gsap.set(".box .boxelem", {
+        y: "100%",
+        opacity: 0
     });
-}
-
-// Animation function for the hero section
-function HeroAnim() {
-    var tl = gsap.timeline();
-
-    // Animation for the navigation bar
-    tl.from('#nav', {
-        y: -10,
-        opacity: 0,
-        ease: Expo.easeInOut,
-        duration: 0.6
-    });
-
-    // Animation for elements with class 'boxelem'
-    tl.to('.boxelem', {
-        y: 0,
+    
+    // Animate the elements into view
+    gsap.to(".box .boxelem", {
+        y: "0%",
         opacity: 1,
-        ease: Expo.EaseInOut,
-        duration: 1,
-        stagger: 0.1,
-        delay: 0.5
-    });
-
-    // Animation for the hero footer
-    tl.from('#herofooter', {
-        y: 10,
-        opacity: 0,
-        ease: Expo.EaseInOut,
-        duration: 0.4,
-        delay: 0.1
+        duration: 1.2,
+        delay: 0.5,
+        stagger: 0.25,
+        ease: "power3.out"
     });
 }
 
-// Variable for setTimeout to manage circleMousefollow updates
-var timeout;
-
-// Function to create a skew effect based on mouse movement
-function circleskew() {
-    var xscale = 1;
-    var yscale = 1;
-    var xprev = 0;
-    var yprev = 0;
-
-    window.addEventListener('mousemove', function (details) {
-        clearTimeout(timeout);
-
-        // Calculate and limit the scale values
-        xscale = gsap.utils.clamp(0.8, 1.2, details.clientX - xprev);
-        yscale = gsap.utils.clamp(0.8, 1.2, details.clientY - yprev);
-
-        xprev = details.clientX;
-        yprev = details.clientY;
-
-        // Update the dot position and scale
-        circleMousefollow(xscale, yscale);
-
-        // Reset the dot position and scale after a delay
-        timeout = setTimeout(function () {
-            document.querySelector('#dot').style.transform = `translate(${details.clientX}px, ${details.clientY}px) scale(1, 1)`;
-        }, 100);
+// Create a smooth moving dot cursor
+function initFollowCursor() {
+    const dot = document.querySelector("#dot");
+    
+    window.addEventListener("mousemove", function(dets) {
+        // Add Tailwind classes programmatically if needed
+        gsap.to(dot, {
+            left: dets.clientX,
+            top: dets.clientY,
+            duration: 0.3
+        });
     });
 }
 
-// Function to update and display real-time with AM/PM and time zone
+// Create hover animations for project elements
+function initHoverEffect() {
+    document.querySelectorAll(".elem").forEach(function(elem) {
+        const image = elem.querySelector("img");
+        const h1 = elem.querySelector("h1");
+        
+        elem.addEventListener("mouseenter", function() {
+            gsap.to(image, {
+                opacity: 1,
+                duration: 0.5
+            });
+            gsap.to(h1, {
+                opacity: 1,
+                duration: 0.5
+            });
+        });
+        
+        elem.addEventListener("mouseleave", function() {
+            gsap.to(image, {
+                opacity: 0,
+                duration: 0.5
+            });
+            gsap.to(h1, {
+                opacity: 0.6,
+                duration: 0.5
+            });
+        });
+        
+        elem.addEventListener("mousemove", function(dets) {
+            gsap.to(image, {
+                left: dets.clientX,
+                top: dets.clientY,
+                duration: 0.3
+            });
+        });
+    });
+}
+
+// Display real-time in the footer
 function updateRealTime() {
-    const date = new Date();
-    const hours = date.getHours() % 12 || 12;
-    const minutes = String(date.getMinutes()).padStart(2, '0');
-    const meridiem = date.getHours() >= 12 ? 'PM' : 'AM';
-    const timeZone = new Date().toLocaleTimeString('en-us', { timeZoneName: 'short' }).split(' ')[2];
-    const timeString = `${hours}:${minutes} ${meridiem} ${timeZone}`;
-    const timeElement = document.getElementById('realtime');
-    if (timeElement) {
-        timeElement.textContent = timeString;
+    const realTimeElement = document.getElementById("realtime");
+    
+    function updateTime() {
+        const now = new Date();
+        const options = { 
+            hour: '2-digit', 
+            minute: '2-digit',
+            hour12: false
+        };
+        
+        // Add Tailwind classes to the time element if needed
+        realTimeElement.textContent = now.toLocaleTimeString('en-US', options) + " IST";
     }
+    
+    // Update the time immediately and then every second
+    updateTime();
+    setInterval(updateTime, 1000);
 }
 
-// Call the functions to initialize the effects
-circleMousefollow();
-HeroAnim();
-circleskew();
-updateRealTime();
-
-setInterval(updateRealTime, 60000);
-
-// Add event listeners to elements with class 'elem'
-document.querySelectorAll('.elem').forEach(function (elem) {
-    var rotate = 0;
-    var rotatediff = 0;
-
-    // Mouseleave event handler to hide image
-    elem.addEventListener("mouseleave", function (details) {
-        gsap.to(elem.querySelector("img"), {
-            opacity: 0,
-            ease: Power3,
-            duration: 0.5,
-        });
-    });
-
-    // Mousemove event handler to create hover effect with image
-    elem.addEventListener("mousemove", function (details) {
-        var diff = details.clientY - elem.getBoundingClientRect().top;
-
-        rotatediff = details.clientX - rotate;
-        rotate = details.clientX;
-
-        // Animate the image's position and rotation
-        gsap.to(elem.querySelector("img"), {
-            opacity: 1,
-            ease: Power3,
-            top: diff,
-            left: details.clientX,
-            rotate: gsap.utils.clamp(-20, 20, rotatediff * 0.5)
-        });
-    });
-});
-
-// Get the dot element
-const dot = document.querySelector('#dot');
-
-// Add event listeners to img elements inside divs with class 'elem'
-document.querySelectorAll('.elem img').forEach(function (img) {
-    // Mouseenter event handler to increase the size of the dot
-    img.addEventListener('mouseenter', function () {
-        console.log('mouseenter')
-        gsap.to(dot, {
-            scale: 2, // Increase the scale as needed
-            duration: 0.3, // Duration of the scale animation
-            ease: 'power1.out', // Easing function for the animation
-        });
-    });
-
-    // Mouseleave event handler to reset the size of the dot
-    img.addEventListener('mouseleave', function () {
-        gsap.to(dot, {
-            scale: 1, // Reset the scale
-            duration: 0.3, // Duration of the scale animation
-            ease: 'power1.out', // Easing function for the animation
-        });
-    });
+// Initialize all functions when DOM is loaded
+document.addEventListener("DOMContentLoaded", function() {
+    initTextReveal(); // Add this line to initialize the text reveal animation
+    initFollowCursor();
+    initHoverEffect();
+    updateRealTime();
 });
