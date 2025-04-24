@@ -7,29 +7,7 @@
 
     <title>PROJECT-1 (PROTFOLIO WEBSITE)</title>
 
-    <!-- Add Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Configure Tailwind with custom styles -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'general-sans': ['"General Sans"', 'sans-serif'],
-                    },
-                    colors: {
-                        'custom-black': '#000',
-                    },
-                }
-            }
-        }
-    </script>
-
-    <!-- Custom Tailwind CSS -->
-    <link rel="stylesheet" href="tailwind.css">
-    
-    <!-- Keep original stylesheets temporarily during transition -->
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="loco.css">
     <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
 
@@ -70,177 +48,132 @@
 
 </head>
 
-<body class="font-general-sans bg-black text-white">
+<body>
     <!-- Dot element that follows the mouse -->
-    <div id="dot" class="absolute z-[99999] w-[17px] h-[17px] bg-white rounded-full mix-blend-difference custom-transition"></div>
-    
-    <div id="main" class="w-full bg-black">
-        <!-- Hero section -->
-        <div id="hero" class="relative w-full h-screen">
-            <div id="nav" class="w-full px-8 py-8 flex items-center justify-between">
-                <a href="#" id="name" class="custom-underline text-white no-underline hover:opacity-80 transition-opacity duration-300">J</a>
-                
-                <!-- Sidebar navigation - Updated design based on reference -->
-                <div id="sidebar" class="sidenav h-screen w-0 fixed top-0 right-0 overflow-x-hidden transition-all duration-500 pt-[60px] bg-black z-[9999]">
-                    <div class="flex justify-between items-center ml-4 px-8 pb-6 border-b border-gray-800">
-                        <marquee class="text-sm" direction="left" behavior="scroll" loop="infinite" scrollamount="10">
-                            <span class="text-gray-400 mr-2">+</span> LIGHT MODE COMING SOON ON STORE <span class="text-gray-400 ml-2">+</span>
-                        </marquee>
-                        <a href="javascript:void(0)" class="closebtn text-white text-2xl hover:text-gray-400 transition-colors duration-300" onclick="closeNav()">
-                            <span class="px-4 py-2 border border-white hover:bg-white hover:text-black transition-all duration-300">CLOSE</span>
-                        </a>
-                    </div>
-                    
-                    <div class="mt-16 px-8">
-                        <div class="menu-item py-4 border-b border-gray-800 group">
-                            <a href="#" class="flex items-center">
-                                <span class="text-gray-400 text-sm mr-4">/01</span>
-                                <span class="text-4xl font-light tracking-wider group-hover:pl-4 transition-all duration-300">MAIN HOME</span>
-                            </a>
-                        </div>
-                        <div class="menu-item py-4 border-b border-gray-800 group">
-                            <a href="#" class="flex items-center">
-                                <span class="text-gray-400 text-sm mr-4">/02</span>
-                                <span class="text-4xl font-light tracking-wider group-hover:pl-4 transition-all duration-300">ABOUT KD6</span>
-                                <span class="ml-4 px-4 py-1 text-xs border rounded-full">OPEN</span>
-                            </a>
-                        </div>
-                        <div class="menu-item py-4 border-b border-gray-800 group">
-                            <a href="#" class="flex items-center">
-                                <span class="text-gray-400 text-sm mr-4">/03</span>
-                                <span class="text-4xl font-light tracking-wider group-hover:pl-4 transition-all duration-300">WORKS</span>
-                            </a>
-                        </div>
-                        <div class="menu-item py-4 border-b border-gray-800 group">
-                            <a href="#" class="flex items-center">
-                                <span class="text-gray-400 text-sm mr-4">/04</span>
-                                <span class="text-4xl font-light tracking-wider group-hover:pl-4 transition-all duration-300">MY TREK</span>
-                            </a>
-                        </div>
-                        <div class="menu-item py-4 border-b border-gray-800 group">
-                            <a href="#" class="flex items-center">
-                                <span class="text-gray-400 text-sm mr-4">/05</span>
-                                <span class="text-4xl font-light tracking-wider group-hover:pl-4 transition-all duration-300">CONTACT</span>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="absolute bottom-8 left-0 w-full px-8 flex justify-between">
-                        <a href="#" class="underline text-gray-400 hover:text-white transition-colors duration-300">INSTAGRAM</a>
-                        <a href="#" class="underline text-gray-400 hover:text-white transition-colors duration-300">DRIBBBLE</a>
-                        <a href="#" class="underline text-gray-400 hover:text-white transition-colors duration-300">TWITTER</a>
-                    </div>
-                </div>
-                
-                <span class="cursor-pointer flex items-center" onclick="openNav()">
-                    <h3 class="text-base uppercase tracking-wide mr-2 hover:text-gray-300 transition-colors duration-300">MENU</h3>
-                    <div class="w-6 h-6 flex items-center justify-center border border-white rounded-full">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="3" y1="12" x2="21" y2="12"></line>
-                            <line x1="3" y1="6" x2="21" y2="6"></line>
-                            <line x1="3" y1="18" x2="21" y2="18"></line>
-                        </svg>
-                    </div>
-                </span>
+    <div id="dot"></div>
+<!-- added change no-select class -->
+    <div id="main" class="no-select">
+<!-- Hero section -->
+        <div id="hero">
+            <div id="nav">
+                <a href="#" id ="name" class="underline">Jagmohan singh malhi</a>
+                 <!-- added change -->
+                <div id="sidebar" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> &times; </a>
+                <!--This is HTML code for creating a close button with an "X" symbol inside it. 
+                    The `href="javascript:void(0)"` part indicates that clicking the link won't navigate to a new page.
+                    The `class="closebtn"` attribute assigns a CSS class to the link, and 
+                    the `onclick="closeNav()"` attribute specifies that when the link is clicked, 
+                    the JavaScript function `closeNav()` will be called. 
+                    This is commonly used to close navigation menus or modal dialogs on a web page.
+                    A modal dialog is a temporary window or pop-up that appears on top of the main content of a webpage or application.-->
+            
+                    <a href="#" target="_blank" class="underline">About</a>
+                    <a href="#" target="_blank" class="underline">Services</a>
+                    <a href="#" target="_blank" class="underline">Clients</a>
+                    <a href="#" target="_blank" class="underline">Contacts</a>
+                </div>   
+            
+                <span   style="font-size: 30px;cursor: pointer;" 
+                        onclick="openNav()"><h3> MENU &#9774;</h3></span>
             </div>
 
-            <div id="heading" class="mt-[90px] mx-auto text-center uppercase">
+            <div id="heading">
                 <!-- Coding and Enthusiast heading -->
-                <div class="box w-fit overflow-hidden mx-auto">
-                    <h1 class="boxelem text-[10vw] font-semibold leading-[0.9] text-[#a3a3a3] opacity-90 font-['General_Sans_Medium',sans-serif] transform translate-y-full">JXLEE</h1>
+                <div class="box">
+                    <h1 class="boxelem">Coding</h1>
                 </div>
 
-                <div class="block flex flex-col items-end w-fit mx-auto">
-                    <div class="box w-fit overflow-hidden">
-                        <h1 class="boxelem text-[10vw] font-semibold leading-[0.9] text-[#a3a3a3] opacity-90 transform translate-y-full" id="sec">007</h1>
+                <div class="block">
+                    <div class="box">
+                        <h1 class="boxelem" id="sec">Admirer</h1>
                     </div>
-                    <div class="box w-fit overflow-hidden">
-                        <h5 class="boxelem text-right text-[17px] transform translate-y-full">Available for freelance</h5>
+                    <div class="box">
+                        <h5 class="boxelem">Based in india</h5>
                     </div>
                 </div>
             </div>
 
-            <!-- <div id="smallhead" class="flex flex-col items-end mt-[100px] pr-[30px]">
-                <div class="box w-fit overflow-hidden">
-                    <h5 class="boxelem text-right uppercase text-[1.15vw] leading-[1.5] mt-[.5vw] transform translate-y-full md:text-base">Available for freelance</h5>
+            <div id="smallhead">
+                <div class="box">
+                    <h5 class="boxelem">Available for freelance</h5>
                 </div>
-                <div class="box w-fit overflow-hidden">
-                    <h5 class="boxelem text-right uppercase text-[1.15vw] leading-[1.5] mt-[.5vw] transform translate-y-full md:text-base">Work from May 23'</h5>
+                <div class="box">
+                    <h5 class="boxelem">Work from May 23'</h5>
                 </div>
-            </div> -->
+            </div>
 
-            <div id="herofooter" class="w-full px-[2vw] absolute bottom-[3%] flex items-center justify-between">
+            <div id="herofooter">
+
                 <!-- Links with icons -->
-                <a href="#" class="custom-underline text-white no-underline uppercase hover:opacity-80 transition-opacity duration-300">Based in India<i class="ri-arrow-right-up-line ml-1"></i></a>
-                <a href="#" target="_blank" class="custom-underline text-white no-underline uppercase hover:opacity-80 transition-opacity duration-300">passions & interests<i class="ri-arrow-right-up-line ml-1"></i></a>
-                <a href="#" id="icon" target="_blank" class="custom-underline text-white no-underline text-2xl opacity-40 hover:opacity-80 transition-opacity duration-300"><i class="ri-arrow-down-circle-fill"></i><i class="ri-arrow-down-circle-fill"></i></a>
+                <a href="#" class="underline">Currently studying at parul<i class="ri-arrow-right-up-line"></i></a>
+                <a href="#" target="_blank" class="underline">passions & interests<i class="ri-arrow-right-up-line"></i></a>
+                <a href="#" id="icon" target="_blank" class="underline"><i class="ri-arrow-down-circle-fill"></i><i class="ri-arrow-down-circle-fill"></i></a>
             </div>
         </div>
 
-        <!-- Second section -->
-        <!-- <div id="second" class="w-full h-screen pt-[200px] pr-[10vw] pl-[2vw] pb-0 md:pt-10 md:px-5">
+<!-- Second section -->
+        <div id="second">
             <!-- Elements with images and headings -->
-            <div class="elem relative w-full flex items-center justify-between border-t border-white pr-0 pt-[3.5vw] pb-[3.5vw] hover:opacity-100 md:pt-6 md:pb-6">
-                <img src="plug.png" alt="CKAY" class="opacity-0 pointer-events-none absolute z-[999] h-[140%] transform -translate-x-1/2 -translate-y-1/2 transition-opacity duration-500">
-                <h1 class="opacity-60 text-[7.5vw] uppercase md:text-5xl">the plug</h1>
-                <h5 class="text-base md:text-sm">2022</h5>
+            <div class="elem">
+                <img src="plug.png" alt="CKAY">
+                <h1>the plug</h1>
+                <h5>2022</h5>
             </div>
-            <div class="elem relative w-full flex items-center justify-between border-t border-white pr-0 pt-[3.5vw] pb-[3.5vw] hover:opacity-100 md:pt-6 md:pb-6">
-                <img src="ixperience.png" alt="EXPERIENCE" class="opacity-0 pointer-events-none absolute z-[999] h-[140%] transform -translate-x-1/2 -translate-y-1/2 transition-opacity duration-500">
-                <h1 class="opacity-60 text-[7.5vw] uppercase md:text-5xl">experience</h1>
-                <h5 class="text-base md:text-sm">2022</h5>
+            <div class="elem">
+                <img src="ixperience.png" alt="EXPERIENCE">
+                <h1>experience</h1>
+                <h5>2022</h5>
             </div>
-            <div class="elem relative w-full flex items-center justify-between border-t border-b border-white pr-0 pt-[3.5vw] pb-[3.5vw] hover:opacity-100 md:pt-6 md:pb-6" id="lastelem">
-                <img src="hudu.png" alt="HUDU" class="opacity-0 pointer-events-none absolute z-[999] h-[140%] transform -translate-x-1/2 -translate-y-1/2 transition-opacity duration-500">
-                <h1 class="opacity-60 text-[7.5vw] uppercase md:text-5xl">hudu</h1>
-                <h5 class="text-base md:text-sm">2022</h5>
+            <div class="elem" id="lastelem">
+                <img src="hudu.png" alt="HUDU">
+                <h1>hudu</h1>
+                <h5>2022</h5>
             </div>
-        </div> -->
+        </div>
 
         <!-- About section -->
-        <div id="about" class="w-full flex items-center gap-[90px] py-[10vw] px-[10vw] pl-[35vw] md:flex-col md:items-center md:py-10 md:px-5">
-            <span class="rounded-full bg-white overflow-hidden flex justify-center h-[250px] w-[250px] md:h-[180px] md:w-[180px]">
-                <img src="./Screenshots/11.png" alt="CHANGE" class="w-full">
-            </span>
-            <div id="txtabout" class="w-[30rem] md:w-full md:text-center md:mt-8">
-                <h5 class="uppercase opacity-80 text-sm leading-normal">(about me)</h5>
-                <p class="leading-relaxed mb-[30px] text-lg md:text-base">
-                    <!-- About me description -->
-                    I'm a Front-end dev with a passion for creating projects
-                    that not only look good but also solve real 
-                    problems. When I'm not sketching ideas on paper, you
-                    can find me binge-watching a Anime series or playing
-                    video games. My work philosophy is simple: make it
-                    visually appealing, functional, and bring a smile to
-                    people's faces. I'm the developer you want on your team 
-                    if you want to make people say 'I need that in my life!'.
+        <div id="about">
+            <span><img src="./Screenshots/11.png" alt="CHANGE"></span>
+            <div id="txtabout">
+                <h5>(about me)</h5>
+                <p>
+                <!-- About me description -->
+                I'm a Front-end dev with a passion for creating projects
+                that not only look good but also solve real 
+                problems. When I'm not sketching ideas on paper, you
+                can find me binge-watching a Anime series or playing
+                video games. My work philosophy is simple: make it
+                visually appealing, functional, and bring a smile to
+                people's faces. I'm the developer you want on your team 
+                if you want to make people say 'I need that in my life!'.
                 </p>
                 <!-- Link to contact -->
-                <a href="#" target="_blank" class="border border-white rounded-full px-6 py-2 no-underline text-white text-[15px] transition-all duration-300 hover:bg-white hover:text-black focus:bg-white focus:text-black md:text-sm">Let's talk</a>
+                <a href="#" target="_blank">Let's talk</a>
             </div>
         </div>
 
         <!-- Subscription section -->
-        <div id="subs" class="py-5 px-10 w-full pb-[50px] leading-relaxed md:py-3 md:px-5">
-            <h5 class="opacity-80 font-light text-base md:text-sm" id="head">(FORGOT TO MENTION)</h5>
+        <div id="subs">
+            <h5>(FORGOT TO MENTION)</h5>
             <!-- Link to subscribe to YouTube channel -->
-            <a href="#" target="_blank" class="custom-underline text-white uppercase no-underline font-medium hover:opacity-80 transition-opacity duration-300 md:text-sm" id="link">subscribe to my youtube channel<i class="ri-arrow-right-up-line ml-1"></i></a>
+            <a href="#" target="_blank" class="underline">subscribe to my youtube channel<i class="ri-arrow-right-up-line"></i></a>
         </div>
 
-        <!-- Footer section -->
-        <div id="footer" class="w-full py-5 px-8 flex items-start justify-between md:flex-col-reverse md:items-start md:gap-5">
-            <div id="left" class="flex items-center gap-[2vw] text-lg md:gap-5 md:text-base">
+<!-- Footer section -->
+        <div id="footer">
+            <div id="left">
                 <!-- Copyright and time information -->
                 <h5>2023 &copy;</h5>
                 <h5 id="realtime"></h5>
             </div>
 
-            <div id="right" class="flex gap-[3.8vw] text-sm font-medium opacity-90 md:gap-6 md:mb-3">
+            <div id="right">
                 <!-- Social media links -->
-                <a href="#" target="_blank" class="custom-underline uppercase no-underline hover:opacity-80 transition-opacity duration-300">dribbble</a>
-                <a href="#" target="_blank" class="custom-underline uppercase no-underline hover:opacity-80 transition-opacity duration-300">instagram</a>
-                <a href="https://www.linkedin.com/in/jagmohan-singh-malhi-a67805243/" target="_blank" class="custom-underline uppercase no-underline hover:opacity-80 transition-opacity duration-300">linkedin</a>
-                <a href="https://github.com/jxlee007" target="_blank" class="custom-underline uppercase no-underline hover:opacity-80 transition-opacity duration-300">github</a>
+                <a href="#" target="_blank" class="underline">dribbble</a>
+                <a href="#" target="_blank" class="underline">instagram</a>
+                <a href="https://www.linkedin.com/in/jagmohan-singh-malhi-a67805243/" target="_blank" class="underline">linkedin</a>
+                <a href="https://github.com/jxlee007" target="_blank" class="underline">github</a>
             </div>
         </div>
     </div>
